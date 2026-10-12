@@ -1,0 +1,29 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Sorting Algorithm Experiment Lab</title>
+<link rel="stylesheet" href="style.css"></head><body>
+<header><b class="logo"><svg viewBox="0 0 28 28" aria-hidden="true"><rect x="1" y="18" width="5" height="9" rx="1.5"/><rect x="8" y="12" width="5" height="15" rx="1.5"/><rect x="15" y="6" width="5" height="21" rx="1.5"/><rect x="22" y="1" width="5" height="26" rx="1.5"/></svg>Sorting Lab</b><nav><button data-go="home" class="on">Home</button> <button data-go="viz">Visualizer</button> <button data-go="exp">Experiment Lab</button> <button data-go="learn">Learn</button></nav><button id="th" title="Dark/light">◐</button></header>
+<main>
+<section id="home" class="on"><div class="hero"><div><span class="tag">Design &amp; Analysis of Algorithms</span><h1>Sorting Algorithm Experiment Lab</h1><p class="sub">Explore how algorithms behave under different input conditions.</p><div class="ctl"><button class="pri" data-go="viz">Start Visualizing</button><button class="pri" data-go="exp">Run Experiment</button><button class="pri" data-go="learn">Learn Algorithms</button></div></div><div class="hb" aria-hidden="true"><i style="--h:35%;--d:0s"></i><i style="--h:70%;--d:0.2s"></i><i style="--h:50%;--d:0.4s"></i><i style="--h:90%;--d:0.1s"></i><i style="--h:25%;--d:0.5s"></i><i style="--h:60%;--d:0.3s"></i><i style="--h:80%;--d:0.6s"></i><i style="--h:40%;--d:0.15s"></i><i style="--h:95%;--d:0.45s"></i><i style="--h:55%;--d:0.25s"></i><i style="--h:30%;--d:0.55s"></i><i style="--h:75%;--d:0.35s"></i></div></div>
+<div class="card q">The question we test: <b>how does the nature of the input affect the performance of different sorting algorithms?</b></div>
+<h3>How it works</h3><div class="grid"><div class="card"><span class="nm">1</span><b>Choose an input</b><br><span class="mu">Random, sorted, reverse, nearly sorted, duplicates or few unique values.</span></div><div class="card"><span class="nm">2</span><b>Pick algorithms</b><br><span class="mu">Watch one sort live, or compare two on the exact same array.</span></div><div class="card"><span class="nm">3</span><b>Observe &amp; compare</b><br><span class="mu">Real counters, measured time, graphs and an auto-written summary.</span></div></div>
+<h3>What makes it different</h3><div class="grid" id="usp"></div></section>
+<section id="viz"><div class="card"><div class="ctl">
+<label>Algorithm<select id="al"></select></label><label>Compare with<select id="al2"></select></label><label>Input type<select id="it"></select></label>
+<label>Array size: <b id="nv">30</b><input id="nz" type="range" min="5" max="300" value="30"></label><label>Speed<input id="sp" type="range" min="1" max="100" value="40"></label>
+<label><span><input id="an" type="checkbox" checked> Animate (auto-off above 80 bars)</span></label></div>
+<div class="ctl"><input id="man" placeholder="Or type your own: 64, 12, 89, 3, 45, 23, 7"><button id="bm">Use my array</button></div>
+<div class="ctl"><button id="bg">Generate Array</button><button id="bs" class="pri">Start Sorting</button><button id="bp">Pause</button><button id="br">Resume</button><button id="bx">Reset</button><button id="bv">◀ Prev step</button><button id="bn">Next step ▶</button></div><div id="msg"></div>
+<small>Step mode: press Pause, then use Prev / Next to move one operation at a time.</small></div>
+<div class="card" id="ex"></div><div id="lanes"></div>
+<div class="legend"><span><i class="cp"></i>Comparing</span><span><i class="sw"></i>Swapping / writing</span><span><i class="pv"></i>Pivot</span><span><i class="rg"></i>Active range (merge / partition / heap)</span><span><i class="dn"></i>Sorted</span></div>
+<div class="grid" id="info"></div></section>
+<section id="exp"><div class="card"><h2>Experiment Lab</h2><p class="mu">Every algorithm receives the <b>same</b> generated array for each input type and size, so the comparison is fair.</p>
+<h4>1. Algorithms</h4><div class="pick" id="ea"></div><h4>2. Input distributions</h4><div class="pick" id="ei"></div><h4>3. Array sizes</h4><div class="pick" id="es"></div>
+<div class="ctl"><button class="pri" id="rn">Run Experiment</button><span id="pg"></span></div></div>
+<div id="out" style="display:none"><div class="card"><h3>Results</h3><div class="sc"><table id="tb"></table></div></div>
+<div class="card"><div class="ctl"><label>Metric<select id="mt"><option value="ms">Time (ms)</option><option value="c">Comparisons</option><option value="s">Swaps</option><option value="r">Array accesses</option></select></label><label>Input type<select id="ci"></select></label><label>Size<select id="cs"></select></label><label><span><input type="checkbox" id="lg"> Log scale</span></label></div>
+<div class="charts"><div id="g1"></div><div id="g2"></div><div id="g3"></div></div><small>⚠ Runtimes are <b>machine-dependent experimental measurements</b> (browser, CPU, JIT). Comparison / swap / access counters are exact and machine-independent.</small></div>
+<div class="card"><h3>What did we learn?</h3><ul id="fd"></ul></div></div></section>
+<section id="learn"><div class="card"><h2>Complexity Explorer</h2><div class="sc"><table id="cx"></table></div><small>Colours: green = constant or linear, yellow = n log n, red = quadratic (gets slow fast).</small><div class="grid" id="bo"></div></div>
+<div class="card"><h3>Correctness check</h3><button id="st">Run self-test of all algorithms</button> <b id="sr"></b></div><div class="grid" id="lc"></div></section>
+</main>
+<script src="script.js"></script></body></html>
